@@ -1,45 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="calculator-canvas">
-        <div class="container">
-            <div class="display">
-                <div><p id="operating_value"></p></div>
-                <div><p id="input_value"></p></div>  
-            </div>
-            <div class="keypad">
-                <div class="btns"><p id="AC">AC</p></div>
-                <div class="btns"><p id="C">C</p></div>
-                <div class="btns"><p id="mod">%</p></div>
-                <div class="btns"><p id="fact">!</p></div>
-                <div class="btns"><p id="one">1</p></div>
-                <div class="btns"><p id="tow">2</p></div>
-                <div class="btns"><p id="three">3</p></div>
-                <div class="btns"><p id="add">+</p></div>
-                <div class="btns"><p id="four">4</p></div>
-                <div class="btns"><p id="five">5</p></div>
-                <div class="btns"><p id="six">6</p></div>
-                <div class="btns"><p id="sub">-</p></div>
-                <div class="btns"><p id="seven">7</p></div>
-                <div class="btns"><p id="eight">8</p></div>
-                <div class="btns"><p id="nine">9</p></div>
-                <div class="btns"><p id="product">*</p></div>
-                <div class="btns"><p id="dot">.</p></div>
-                <div class="btns"><p id="zero">0</p></div>
-                <div class="btns"><p id="equals">=</p></div>
-                <div class="btns"><p id="divide">/</p></div>
-            </div>
+      <div class="container">
+        <div class="display" id="display">
+          <div><p id="operating_value"></p></div>
+          <div><p id="input_value"></p></div>
         </div>
+        <div class="keypad">
+          <div class="btns"><p id="AC">AC</p></div>
+          <div class="btns"><p id="C">C</p></div>
+          <div class="btns">
+            <p class="displayable operators" id="mod">%</p>
+          </div>
+          <div class="btns">
+            <p class="displayable operators" id="fact">!</p>
+          </div>
+          <div class="btns"><p class="displayable" id="one">1</p></div>
+          <div class="btns"><p class="displayable" id="tow">2</p></div>
+          <div class="btns"><p class="displayable" id="three">3</p></div>
+          <div class="btns">
+            <p class="displayable operators" id="add">+</p>
+          </div>
+          <div class="btns"><p class="displayable" id="four">4</p></div>
+          <div class="btns"><p class="displayable" id="five">5</p></div>
+          <div class="btns"><p class="displayable" id="six">6</p></div>
+          <div class="btns">
+            <p class="displayable operators" id="sub">-</p>
+          </div>
+          <div class="btns"><p class="displayable" id="seven">7</p></div>
+          <div class="btns"><p class="displayable" id="eight">8</p></div>
+          <div class="btns"><p class="displayable" id="nine">9</p></div>
+          <div class="btns">
+            <p class="displayable operators" id="product">*</p>
+          </div>
+          <div class="btns"><p class="displayable" id="dot">.</p></div>
+          <div class="btns"><p class="displayable" id="zero">0</p></div>
+          <div class="btns"><p class="displayable" id="equals">=</p></div>
+          <div class="btns">
+            <p class="displayable operators" id="divide">/</p>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
