@@ -31,21 +31,29 @@ const operators = document.querySelectorAll(".operators");
 const equals = document.getElementById("equals");
 
 allClear.addEventListener("click", () => {
-  display.innerText = "";
+  window.location.reload();
 });
 
 clear.addEventListener("click", () => {});
 
-for (const button of buttons) {
-  button.addEventListener("click", () => {
-    inputDisplay.innerText += button.innerText;
-    const valueOne = inputDisplay.innerText;
-  });
-}
+let addNumbersToDisplay = function () {
+  for (const button of buttons) {
+    button.addEventListener("click", () => {
+      inputDisplay.textContent += button.textContent;
+      const valueOne = inputDisplay.textContent;
+      return valueOne;
+    });
+  }
+};
 
-for (const operator of operators) {
-  operator.addEventListener("click", () => {
-    const operatorOne = operator.innerText;
-    operatingDisplay.innerText += inputDisplay.innerText;
-  });
-}
+let addOperatorsToDisplay = function () {
+  for (const operator of operators) {
+    operator.addEventListener("click", () => {
+      inputDisplay.textContent += operator.textContent;
+      const operatorOne = operator.textContent;
+      return operatorOne;
+    });
+  }
+};
+addNumbersToDisplay();
+addOperatorsToDisplay();
