@@ -106,7 +106,14 @@ footer a {
     height: 450px;
   }
   .btns p {
+    background-color: wheat;
+    color: black;
+    text-align: center;
+    padding: 0.9em;
+    border: 3px solid black;
+    border-radius: 10px;
     font-size: 0.8rem;
+    transition: all 0.4s;
   }
   .display {
     margin-top: 0;
