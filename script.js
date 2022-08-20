@@ -8,7 +8,13 @@ function product(a, b) {
   return a * b;
 }
 function divide(a, b) {
+  if (b === 0) {
+    alert("Cannot divide by zero.!");
+  }
   return a / b;
+}
+function round(value, decimals) {
+  return Number(Math.round(value + "e" + decimals) + "e-" + decimals);
 }
 
 function operate(str, a, b) {
@@ -19,7 +25,7 @@ function operate(str, a, b) {
   } else if (str === "*") {
     return product(a, b);
   } else if (str === "/") {
-    return divide(a, b);
+    return round(divide(a, b), 4);
   }
 }
 
@@ -31,6 +37,7 @@ const clear = document.getElementById("C");
 const buttons = document.querySelectorAll(".displayable");
 const operators = document.querySelectorAll(".operators");
 const equals = document.getElementById("equals");
+const dot = document.getElementById("dot");
 
 clearAll.addEventListener("click", () => {
   inputDisplay.textContent = "";
@@ -56,7 +63,9 @@ for (const operator of operators) {
 equals.addEventListener("click", () => {
   inputDisplay.textContent = operation();
 });
-
+if (inputDisplay.textContent.includes(".")) {
+  document.getElementById("dot").disabled = true;
+}
 function operation() {
   let expression = inputDisplay.textContent;
   let result;

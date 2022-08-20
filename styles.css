@@ -73,3 +73,11 @@ html {
   background-color: white;
   transform: scale(0.9);
 }
+#add,
+#sub,
+#product,
+#divide,
+#equals {
+  background-color: rgb(54, 5, 4);
+  color: white;
+}
