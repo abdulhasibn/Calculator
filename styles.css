@@ -81,6 +81,25 @@ html {
   background-color: rgb(54, 5, 4);
   color: white;
 }
+
+footer {
+  color: black;
+  background-color: wheat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 95vh;
+  word-spacing: 0.3em;
+  gap: 0.5em;
+}
+footer a {
+  color: black;
+  text-decoration: none;
+}
+.img-icon {
+  width: 30px;
+}
 @media only screen and (max-width: 450px) {
   .calculator-canvas {
     width: 300px;
@@ -91,5 +110,8 @@ html {
   }
   .display {
     margin-top: 0;
+  }
+  footer {
+    font-size: 0.7rem;
   }
 }
