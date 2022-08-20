@@ -10,6 +10,7 @@ function product(a, b) {
 function divide(a, b) {
   return a / b;
 }
+
 function operate(str, a, b) {
   if (str === "+") {
     return add(a, b);
@@ -21,39 +22,74 @@ function operate(str, a, b) {
     return divide(a, b);
   }
 }
-const buttons = document.querySelectorAll(".displayable");
+
 const display = document.getElementById("display");
-const inputDisplay = document.getElementById("input_value");
 const operatingDisplay = document.getElementById("operating_value");
-const allClear = document.getElementById("AC");
+const inputDisplay = document.getElementById("input_value");
+const clearAll = document.getElementById("AC");
 const clear = document.getElementById("C");
+const buttons = document.querySelectorAll(".displayable");
 const operators = document.querySelectorAll(".operators");
 const equals = document.getElementById("equals");
 
-allClear.addEventListener("click", () => {
-  window.location.reload();
+clearAll.addEventListener("click", () => {
+  inputDisplay.textContent = "";
 });
 
-clear.addEventListener("click", () => {});
+clear.addEventListener("click", () => {
+  let expression = inputDisplay.textContent;
+  inputDisplay.textContent = expression.substring(0, expression.length - 1);
+});
 
-let addNumbersToDisplay = function () {
-  for (const button of buttons) {
-    button.addEventListener("click", () => {
-      inputDisplay.textContent += button.textContent;
-      const valueOne = inputDisplay.textContent;
-      return valueOne;
-    });
-  }
-};
+for (const button of buttons) {
+  button.addEventListener("click", () => {
+    inputDisplay.textContent += button.textContent;
+  });
+}
 
-let addOperatorsToDisplay = function () {
-  for (const operator of operators) {
-    operator.addEventListener("click", () => {
-      inputDisplay.textContent += operator.textContent;
-      const operatorOne = operator.textContent;
-      return operatorOne;
-    });
+for (const operator of operators) {
+  operator.addEventListener("click", () => {
+    inputDisplay.textContent = operation() + operator.textContent;
+  });
+}
+
+equals.addEventListener("click", () => {
+  inputDisplay.textContent = operation();
+});
+
+function operation() {
+  let expression = inputDisplay.textContent;
+  let result;
+  if (expression.indexOf("+") != -1) {
+    let expressionArray = expression.split("+");
+    result = operate(
+      "+",
+      Number(expressionArray[0]),
+      Number(expressionArray[1])
+    );
+  } else if (expression.indexOf("-") != -1) {
+    let expressionArray = expression.split("-");
+    result = operate(
+      "-",
+      Number(expressionArray[0]),
+      Number(expressionArray[1])
+    );
+  } else if (expression.indexOf("*") != -1) {
+    let expressionArray = expression.split("*");
+    result = operate(
+      "*",
+      Number(expressionArray[0]),
+      Number(expressionArray[1])
+    );
+  } else if (expression.indexOf("/") != -1) {
+    let expressionArray = expression.split("/");
+    result = operate(
+      "/",
+      Number(expressionArray[0]),
+      Number(expressionArray[1])
+    );
+  } else {
+    result = expression;
   }
-};
-addNumbersToDisplay();
-addOperatorsToDisplay();
+  return result;
+}
