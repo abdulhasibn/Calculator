@@ -20,7 +20,7 @@ Setting up the github repository for the project, I headed up to create the mobi
 
 Desktop View
 
-![](./Images/calculator_desktop.pngg)
+![](./Images/calculator_desktop.png)
 
 Mobile View
 
