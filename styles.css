@@ -50,7 +50,7 @@ html {
   gap: 1.2em;
 }
 .del_cle {
-  width: 50%;
+  width: 100%;
 }
 .keypad {
   display: grid;
@@ -58,7 +58,7 @@ html {
   grid-gap: 1em;
   margin-top: 1em;
 }
-.btns p {
+.btns {
   background-color: wheat;
   color: black;
   text-align: center;
@@ -68,7 +68,7 @@ html {
   font-size: 1.3rem;
   transition: all 0.4s;
 }
-.btns p:hover {
+.btns:hover {
   cursor: pointer;
   background-color: white;
   transform: scale(0.9);
@@ -105,7 +105,7 @@ footer a {
     width: 300px;
     height: 450px;
   }
-  .btns p {
+  .btns {
     background-color: wheat;
     color: black;
     text-align: center;

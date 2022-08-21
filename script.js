@@ -40,12 +40,11 @@ const equals = document.getElementById("equals");
 const dot = document.getElementById("dot");
 
 clearAll.addEventListener("click", () => {
-  inputDisplay.textContent = "";
+  makeEmpty();
 });
 
 clear.addEventListener("click", () => {
-  let expression = inputDisplay.textContent;
-  inputDisplay.textContent = expression.substring(0, expression.length - 1);
+  deleteChar();
 });
 
 for (const button of buttons) {
@@ -59,12 +58,37 @@ for (const operator of operators) {
     inputDisplay.textContent = operation() + operator.textContent;
   });
 }
+window.addEventListener("keydown", (e) => {
+  if (
+    (e.code.includes("Numpad") && !e.code.includes("NumpadEnter")) ||
+    e.code.includes("Digit")
+  ) {
+    inputDisplay.textContent += e.key;
+  } else if (
+    e.code.includes("Equal") ||
+    e.code.includes("Enter") ||
+    e.code.includes("NumpadEnter")
+  ) {
+    getResult();
+  } else if (e.code.includes("Backspace")) {
+    deleteChar();
+  } else if (e.code.includes("Delete")) {
+    makeEmpty();
+  }
+});
 
 equals.addEventListener("click", () => {
-  inputDisplay.textContent = operation();
+  getResult();
 });
-if (inputDisplay.textContent.includes(".")) {
-  document.getElementById("dot").disabled = true;
+function getResult() {
+  inputDisplay.textContent = operation();
+}
+function deleteChar() {
+  let expression = inputDisplay.textContent;
+  inputDisplay.textContent = expression.substring(0, expression.length - 1);
+}
+function makeEmpty() {
+  inputDisplay.textContent = "";
 }
 function operation() {
   let expression = inputDisplay.textContent;
